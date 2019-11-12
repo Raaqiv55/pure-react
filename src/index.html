@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">React NOt Reander</div>
+    <script src="https://unpkg.com/react@16.8.6/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.8.6/umd/react-dom.development.js"></script>
+    <script>
+    //     const Person = (props) => {
+    //         return React.createElement('div', {}, [
+    //             React.createElement('h1', {}, props.name),
+    //             React.createElement('p', {}, props.occuption)
+    //         ])
+    //     }
+    //     const App = () => {
+    //         return React.createElement("div", {}, 
+    //             [
+    //                 React.createElement("h1", {}, "React Reander"),
+    //                 React.createElement(Person, {name: 'Rick', occuption: 'Developer'}),
+    //                 React.createElement(Person, {name: 'Rakib', occuption: 'WP'}),
+    //                 React.createElement(Person, {name: 'Rex', occuption: 'PHP'})
+    //             ]
+    //         );
+    //     }
+    //    ReactDOM.render(React.createElement(App), document.getElementById('root'));
+
+
+        const Person = (props) => {
+            return React.createElement('div', {}, 
+                [
+                    React.createElement('h1', {}, props.name),
+                    React.createElement('p',{}, props.occuption)
+                ]
+            )
+        }
+
+        class App extends React.Component {
+            render(){
+                return React.createElement('div', {},
+                [
+                    React.createElement('h1', {}, 'Reader'),
+                    React.createElement('p', {}, 'SomeOne'),
+                    React.createElement(Person, {name: 'SOmeOne', occuption: 'sonne'}), 
+                    React.createElement(Person, {name: 'anotherOne', occuption: 'soeoele'}) 
+                ]
+                )
+            }
+        }
+
+        // const App = () => {
+        //     return React.createElement('div', {},
+        //         [
+        //             React.createElement('h1', {}, 'Reader'),
+        //             React.createElement('p', {}, 'SomeOne'),
+        //             React.createElement(Person, {name: 'SOmeOne', occuption: 'sonne'}), 
+        //             React.createElement(Person, {name: 'anotherOne', occuption: 'soeoele'}) 
+        //         ]
+        //     )
+        // }
+        ReactDOM.render(React.createElement(App), document.getElementById('root'));
+
+    </script>
+</body>
+</html>
